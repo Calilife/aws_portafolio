@@ -3,5 +3,7 @@ This is my Professional Portafolio. It uses AWS technology and ReactJS.
 
 ##technologies Used
 
+Chocolatey
+Brew
 Git and github
 SSH
