@@ -7,3 +7,8 @@ Chocolatey
 Brew
 Git and github
 SSH
+HTML
+CSS
+HTML
+Font awesome
+Google fonts
