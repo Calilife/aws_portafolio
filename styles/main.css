@@ -12,6 +12,8 @@
 
   Dark Blue
     rgb(44, 62, 80)
+    New Dark Blue
+      $color1: rgba(1, 22, 39, 1);
 
   Grey
     rgb(127, 140, 141)
@@ -21,15 +23,15 @@
 */
 
 .background--skyBlue {
-  background-color: rgb(52, 152, 219);
+  background-color: rgba(1, 22, 39, 1);
 }
 
 .color--skyBlue {
-  color: rgb(52, 152, 219);
+  color: rgba(1, 22, 39, 1);
 }
 
 .color--cloud {
-  color: rgb(236, 240, 241);
+  color: rgba(253, 255, 252, 1);
 }
 
 .color--grey {
