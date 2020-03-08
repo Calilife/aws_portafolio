@@ -1,4 +1,32 @@
+import json
 import boto3 
+import StringIO
+import zipfile
+import mimetypes 
+
+def lambda_handler(event, context):
+    s3 = boto3.resource('s3')
+    
+    portafolio_bucket = s3.Bucket('portafolio.vesgasebas.net')
+    portafoliobuild_bucket = s3.Bucket('portafoliobuild.vesgasebas.net')
+    
+    portafolio_zip = StringIO.StringIO()
+    portafoliobuild_bucket.download_fileobj('CodeBuild_Portafolio_VesgaSebas.zip', portafolio_zip)
+    
+    with zipfile.ZipFile(portafolio_zip) as myzip:  
+        for nm in myzip.namelist(): 
+            obj = myzip.open(nm) 
+            portafolio_bucket.upload_fileobj(obj, nm, 
+                ExtraArgs={'ContentType': mimetypes.guess_type(nm)[0]}) 
+            portafolio_bucket.Object(nm).Acl().put(ACL='public-read')
+        # TODO implement
+    return {
+            'statusCode': 200,
+            'body': json.dumps('Hello from Lambda!')
+        }
+
+
+""" import boto3 
 from botocore.client import config
 import io
 import zipfile
@@ -17,7 +45,7 @@ with zipfile.ZipFile(portafolio_zip) as myzip:
         obj = myzip.open(nm) 
         portafolio_bucket.upload_fileobj(obj, nm, 
             ExtraArgs={'ContentType': mimetypes.guess_type(nm)[0]}) 
-        portafolio_bucket.Object(nm).Acl().put(ACL='public-read')
+        portafolio_bucket.Object(nm).Acl().put(ACL='public-read') """
 
 """ with zipfile.ZipFile(portafolio.zip) as myzip:
     for nm in myzip.namelist(): 
