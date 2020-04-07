@@ -1,5 +1,5 @@
 # Sebastian Vesga's Professional Portfolio
-This is my Professional Portafolio. It uses AWS technology and ReactJS.
+This is my Professional Portfolio. It uses AWS technology and ReactJS.
 
 <p>
 <strong>##Technologies Used</strong>
