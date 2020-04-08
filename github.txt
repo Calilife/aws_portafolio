@@ -1,0 +1,15 @@
+git status
+git add 
+git commit -m 
+git push 
+git pull 
+git rm file1.txt
+git clone /path/to/repository
+git config --global user.name "Sam Smith"
+git config --global user.email sam@example.com
+git checkout -b <branchname>
+git checkout <branchname>
+git branch
+git push origin <branchname>
+git merge <branchname>
+git grep "foo()"
