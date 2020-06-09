@@ -5,10 +5,11 @@
     <title>Babel Demostration</title>
     <style media="screen">
       .errorBox {
-        border: 1px solid red; 
-        background-color: #eebbbb; 
-        margin: 1em; 
+        border: 4px solid red;
+        background-color: #eebbbb;
+        margin: 1em;
         padding: 2em;
+        width: 300px;
       }
       .errorBox--hidden {
         display: none;
@@ -17,20 +18,23 @@
   </head>
   <body>
     <main>
-    <label>Name: <input id="name" type="text"/></label> 
+    <label>Name: <input id="name" type="text"/></label>
     <button id="submit_info">Click here to submit</button>
 
     <div id="content"></div>
     <div id="error" class="errorBox--hidden">
-    Error will fal off here. 
+    Error will fal off here.
     </div>
     </main>
 <!-- Load Babel -->
 <!-- v6 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!--  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+  <script src="https://unpkg.com/babel-standalone">
+
+  </script>
   <!-- Your custom script here -->
-  <script type="text/babel">
-    
+  <script type="text/babel" data-presets="latest">
+
     const getMessage = (name) => `Welcome to JavaScript , ${name}!`;
     const button = document.getElementById('submit_info');
     const contentArea = document.getElementById('content');
@@ -38,11 +42,11 @@
 
     button.addEventListener('click', (evt) => {
       messageArea.className = "errorBox--hidden";
-      contentArea.textContent =""; 
+      contentArea.textContent ="";
 
       let name = document.getElementById("name").value;
       if (name.length < 2){
-        messageArea.textContent = "You need to enter a name"; 
+        messageArea.textContent = "You need to enter a name";
         messageArea.className = "errorBox"
       }
       else{
