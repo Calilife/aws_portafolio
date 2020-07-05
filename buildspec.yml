@@ -4,8 +4,8 @@ phases:
     build:
       commands:
         - npm install
-        - npm install webpack
-        - npm run webpack
+        # - npm install webpack
+        # - npm run webpack
 artifacts:
     files:
       - index.html
