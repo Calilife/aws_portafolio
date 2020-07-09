@@ -21,6 +21,7 @@ class ExampleWorkBubble extends React.Component{
         return (
             <div className="section__exampleWrapper">
                 <div className="section__example">
+                    <a href={example.href}>
                     <img alt={example.image.desc}
                         className="section__exampleImage"
                         src={example.image.src}/>
@@ -30,6 +31,7 @@ class ExampleWorkBubble extends React.Component{
                     </dt>
                     <dd></dd>
                     </dl>
+                    </a>
                 </div>
             </div>
         )
